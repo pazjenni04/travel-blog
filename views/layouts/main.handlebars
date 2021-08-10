@@ -1,0 +1,34 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Blog</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="flex-column justify-space-around">
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+      Travel Blog
+    </h1>
+  </header>
+    <main class="container container-fluid mt-5">
+      {{{ body }}}
+    </main>
+  </div>
+  <nav>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+
+  {{!-- if logged on, will display logout option --}}
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  </body>
+
+</html>
