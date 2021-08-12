@@ -1,9 +1,10 @@
 const router = require("express").Router();
+const { Blog } = require("../models");
 
 //renders the homepage in handlebars
-router.get("/", async (req, res) => {
-  res.render("main");
-});
+// router.get("/", async (req, res) => {
+//   res.render("main");
+// });
 
 //renders all posted blogs
 router.get("/", async (req, res) => {
@@ -16,8 +17,8 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const blogs = blogData.map((blog) => blog.get({ plain: true }));
-    res.render("account", {
+    const blogs = blogData.map((input) => input.get({ plain: true }));
+    res.render("main", {
       blogs,
       loggedIn: req.session.loggedIn,
     });
