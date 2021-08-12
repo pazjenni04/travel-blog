@@ -20,12 +20,14 @@ router.post("/login", async (req, res) => {
         .json({ message: "Email or password incorrect, please try again" });
       return;
     }
+
+    //saves the session
+    req.session.save(() => {
+      req.session.loggedIn = true;
+    });
   } catch (err) {
     res.status(400).json(err);
   }
-  // req.session.save(() => {
-  //   req.session.user
-  // })
 });
 
 //user logout
