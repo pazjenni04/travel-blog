@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "content": "This information is so helpful!",
+    "date_created": "1/17/2020",
+    "user_id": 2,
+    "blog_id": 1
+  },
+  {
+    "id": 2,
+    "content": "Kepp posting these tips - love your content!",
+    "date_created": "4/17/2020",
+    "user_id": 5,
+    "blog_id": 2
+  }
+]

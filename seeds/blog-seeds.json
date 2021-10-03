@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Alaska travels",
+    "description": "Enjoying the northern lights...",
+    "date_posted": "1/16/2020",
+    "user_id": 1
+  },
+  {
+    "id": 2,
+    "title": "Thailand must dos!",
+    "description": "Top thing to do in Thailand if you're only traveling for a week...",
+    "date_posted": "3/10/2020",
+    "user_id": 2
+  },
+  {
+    "id": 3,
+    "title": "Turkey wishlist",
+    "description": "Researching different activities for Turkey travels.",
+    "date_posted": "4/16/2020",
+    "user_id": 3
+  },
+  {
+    "id": 4,
+    "title": "South Korea Bucket list",
+    "description": "Bucket list must dos while traveling to Korea",
+    "date_posted": "4/20/2020",
+    "user_id": 4
+  },
+  {
+    "id": 5,
+    "title": "Mexico Lindo y Querido",
+    "description": "The culture, the food and the love....",
+    "date_posted": "7/20/2020",
+    "user_id": 5
+  },
+  {
+    "id": 6,
+    "title": "Punta Cana and the DR",
+    "description": "Dancing the night away....",
+    "date_posted": "10/20/2020",
+    "user_id": 6
+  }
+]

@@ -2,6 +2,28 @@ const router = require("express").Router();
 const Blog = require("../../models/Blog");
 const sequelize = require("../../config/connection");
 
+//renders all posted blogs
+router.get("/blog", async (req, res) => {
+  try {
+    const blogData = await Blog.findAll({
+      include: [
+        {
+          model: Blog,
+        },
+      ],
+    });
+
+    const blogs = blogData.map((input) => input.get({ plain: true }));
+    res.render("blog", {
+      blogs,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 //render one blog by title
 router.get("/blog/:id", async (req, res) => {
   try {

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "elMaton956",
+    "email": "elmaton956@gmail.com",
+    "password": "password123"
+  },
+  {
+    "id": 2,
+    "username": "elsaDavila214",
+    "email": "davila214@gmail.com",
+    "password": "password123"
+  },
+  {
+    "id": 3,
+    "username": "ashleyPaz00",
+    "email": "paz00@gmail.com",
+    "password": "password123"
+  },
+  {
+    "id": 4,
+    "username": "luna1234",
+    "email": "luna1234@gmail.com",
+    "password": "password123"
+  },
+  {
+    "id": 5,
+    "username": "estrella456",
+    "email": "estrella456@gmail.com",
+    "password": "password123"
+  },
+  {
+    "id": 6,
+    "username": "test666",
+    "email": "test666@gmail.com",
+    "password": "password123"
+  }
+]
