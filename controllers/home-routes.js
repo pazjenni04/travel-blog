@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 
 //renders the homepage in handlebars
 router.get("/", async (req, res) => {
-  res.render("main");
+  res.render("homepage");
 });
 
 //renders all posted blogs

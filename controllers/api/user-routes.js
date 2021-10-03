@@ -31,6 +31,33 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//creates a user account
+router.post("/", async (req, res) => {
+  try {
+    const signupData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = signupData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(orgData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+//renders sign up page
+router.get("/signup", async (req, res) => {
+  try {
+    res.render("signup");
+  } catch (err) {
+    console.log(err);
+    res.status(404).json(err);
+  }
+});
+
 //user logout
 router.post("/logout", (req, res) => {
   req.session.destroy();
