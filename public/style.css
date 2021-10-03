@@ -16,3 +16,33 @@ h1 {
 h2 {
   font-family: "Josefin Sans", sans-serif;
 }
+
+#home-title {
+  font-size: 65px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 10px;
+}
+
+#van-travel {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginBtn {
+  margin: 10px;
+  padding: 10px;
+  font-size: 30px;
+  background-color: #d5f5e3;
+  border-radius: 5px;
+}
+
+#home-p {
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+}

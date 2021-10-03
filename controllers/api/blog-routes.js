@@ -3,7 +3,7 @@ const Blog = require("../../models/Blog");
 const sequelize = require("../../config/connection");
 
 //renders all posted blogs
-router.get("/blog", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const blogData = await Blog.findAll({
       include: [
@@ -25,7 +25,7 @@ router.get("/blog", async (req, res) => {
 });
 
 //render one blog by title
-router.get("/blog/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const blogData = await Blog.findOne({
       where: { title: req.body.title },
@@ -40,7 +40,7 @@ router.get("/blog/:id", async (req, res) => {
 });
 
 //deletes blog
-router.delete("/blog/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const blogData = await Blog.destroy({
       where: {
