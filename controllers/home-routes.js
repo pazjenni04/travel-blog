@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
 });
 
 //renders all posted blogs
-router.get("/", async (req, res) => {
+router.get("/blogs", async (req, res) => {
   try {
     const blogData = await Blog.findAll({
       include: [

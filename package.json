@@ -20,11 +20,11 @@
   "homepage": "https://github.com/pazjenni04/travel-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.1",
+    "connect-session-sequelize": "^7.1.2",
     "connect-session-store": "0.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3",
+    "express-handlebars": "^5.3.4",
     "express-router": "0.0.1",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
