@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Blog } = require("../models");
+const Blog = require("../models/Blog");
+const sequelize = require("../config/connection");
 
 //renders the homepage in handlebars
 router.get("/", async (req, res) => {
@@ -18,7 +19,7 @@ router.get("/", async (req, res) => {
     });
 
     const blogs = blogData.map((input) => input.get({ plain: true }));
-    res.render("main", {
+    res.render("blog", {
       blogs,
       loggedIn: req.session.loggedIn,
     });

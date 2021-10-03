@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Blog } = require("../../models");
+const Blog = require("../../models/Blog");
+const sequelize = require("../../config/connection");
 
 //render one blog by title
 router.get("/blog/:id", async (req, res) => {
@@ -35,3 +36,5 @@ router.delete("/blog/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
