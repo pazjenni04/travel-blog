@@ -1,14 +1,14 @@
 //need to create event listener for the signup btn for user to send info the back end
 const newUser = async (event) => {
-  console.log("TESTING");
+  console.log(newUser);
   event.preventDefault();
 
   const username = document.getElementById("newUsername").value.trim();
-  const userEmail = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const userEmail = document.getElementById("email-signup").value.trim();
+  const password = document.getElementById("password-signup").value.trim();
 
   if (username && userEmail && password) {
-    const response = await fetch("/api/user-routes", {
+    const response = await fetch("/api/user/", {
       method: "POST",
       body: JSON.stringify({
         username: username,
@@ -32,4 +32,4 @@ const newUser = async (event) => {
 };
 
 //event listener for signup
-document.getElementById("signupBtn").addEventListener("submit", newUser);
+document.getElementById("formSubmission").addEventListener("submit", newUser);

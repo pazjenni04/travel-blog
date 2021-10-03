@@ -1,32 +1,11 @@
 const router = require("express").Router();
-const Blog = require("../models/Blog");
 const sequelize = require("../config/connection");
+const { User } = require("../models");
+const withAuth = require("../utils/auth");
 
 //renders the homepage in handlebars
 router.get("/", async (req, res) => {
   res.render("homepage");
-});
-
-//renders all posted blogs
-router.get("/", async (req, res) => {
-  try {
-    const blogData = await Blog.findAll({
-      include: [
-        {
-          model: Blog,
-        },
-      ],
-    });
-
-    const blogs = blogData.map((input) => input.get({ plain: true }));
-    res.render("blog", {
-      blogs,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
 });
 
 // Login route
@@ -36,6 +15,27 @@ router.get("/login", (req, res) => {
     return;
   }
   res.render("login");
+});
+
+// Use withAuth middleware to prevent access to route
+router.get("/profile", withAuth, async (req, res) => {
+  try {
+    console.log(req.session.id);
+    // Find the logged in user and use seesion id
+    const userData = await User.findByPk(req.session.id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render("blog", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
