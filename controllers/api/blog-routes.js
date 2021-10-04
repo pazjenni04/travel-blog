@@ -6,11 +6,7 @@ const sequelize = require("../../config/connection");
 router.get("/", async (req, res) => {
   try {
     const blogData = await Blog.findAll({
-      include: [
-        {
-          model: Blog,
-        },
-      ],
+      include: { all: true, nested: true },
     });
 
     const blogs = blogData.map((input) => input.get({ plain: true }));
@@ -21,6 +17,23 @@ router.get("/", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+//creates a user account
+router.post("/post", async (req, res) => {
+  try {
+    const blogData = await Blog.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = blogData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(blogData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
   }
 });
 

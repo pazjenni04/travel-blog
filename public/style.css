@@ -46,3 +46,8 @@ h2 {
   margin: 20px;
   text-align: center;
 }
+
+#blog-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+}

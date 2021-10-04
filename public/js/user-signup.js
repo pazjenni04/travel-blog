@@ -1,6 +1,6 @@
 //need to create event listener for the signup btn for user to send info the back end
 const newUser = async (event) => {
-  console.log(newUser);
+  console.log("User submitted");
   event.preventDefault();
 
   const username = document.getElementById("newUsername").value.trim();

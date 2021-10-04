@@ -23,6 +23,9 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only"></span></a>
       <a class="nav-item nav-link" href="/api/blog">Blogs</a>
+      {{#if loggedIn}}
+       <a class="nav-item nav-link" href="/profile">Profile</a>
+       {{/if}}
     </div>
   </div>
 </nav>

@@ -1,16 +1,21 @@
-<form>
-  <div class="form-group">
-    <label for="new-blog-post">Title</label>
-    <input
-      type="text"
-      class="form-control"
-      id="new-post"
-      placeholder="Insert New Blog Post"
-    />
-  </div>
-  <div class="form-group">
-    <label for="new-blog-post">Tell me about your trip!</label>
-    <textarea class="form-control" id="post-text-area" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary mb-2">Submit post</button>
-</form>
+{{#if session.loggedIn}}
+
+  <form id="post-submission">
+    <div class="form-group">
+      <label for="new-blog-post">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="new-title"
+        placeholder="Insert New Blog Post"
+      />
+    </div>
+    <div class="form-group">
+      <label for="new-blog-post">Tell me about your trip!</label>
+      <textarea class="form-control" id="post-text-area" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit post</button>
+  </form>
+{{else}}
+  <div class="msg error">Please log on to add a new comment.</div>
+{{/if}}
