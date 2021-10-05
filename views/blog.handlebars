@@ -1,12 +1,12 @@
 <h2 id="blog-title">Blogs</h2>
 
-{{#each blog as |blog|}}
+{{#each blogs as |blog|}}
   <div class="row mb-4 post">
     <div class="col-md-5">
       <h2>
         <a href="#">{{blog.title}}</a>
       </h2>
-      <p>Created by {{user.id}} on {{format_date blog.date_created}}</p>
+      <p>Created by {{user.username}} on {{format_date blog.date_posted}}</p>
     </div>
     <div class="col-md-7">
       <p>
@@ -16,10 +16,32 @@
   </div>
 {{/each}}
 
-{{#each Comment as |comment|}}
+{{#each comments as |comment|}}
   <div>
     <p>{{comment.content}}</p>
     <p>Date created: {{comment.date_created}}</p>
     <p>{{comment.user_id}}</p>
   </div>
 {{/each}}
+
+{{#if loggedIn}}
+
+  <form id="post-submission">
+    <div class="form-group">
+      <label for="new-blog-post">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="new-title"
+        placeholder="Insert New Blog Post"
+      />
+    </div>
+    <div class="form-group">
+      <label for="new-blog-post">Tell me about your trip!</label>
+      <textarea class="form-control" id="post-text-area" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit post</button>
+  </form>
+{{else}}
+  <div class="msg error">Please log on to add a new comment.</div>
+{{/if}}

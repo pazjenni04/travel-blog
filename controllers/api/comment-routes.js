@@ -63,7 +63,7 @@ router.put("/update", async (req, res) => {
       {
         content: req.body.content,
       },
-      { where: { id: req.params.id } }
+      { where: { id: req.params.id, user_id: req.session.user_id } }
     );
 
     const commentsData = await Comment.findAll({

@@ -20,10 +20,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-//creates a user account
-router.post("/post", async (req, res) => {
+//creates a new blog post
+router.post("/", async (req, res) => {
   try {
-    const blogData = await Blog.create(req.body);
+    const blogData = await Blog.create(...req.body);
 
     req.session.save(() => {
       req.session.user_id = blogData.id;
@@ -37,12 +37,18 @@ router.post("/post", async (req, res) => {
   }
 });
 
-//render one blog by title
-router.get("/:id", async (req, res) => {
+//updates one blog and updates
+router.put("/:id", async (req, res) => {
   try {
-    const blogData = await Blog.findOne({
-      where: { title: req.body.title },
-    });
+    const blogData = await Blog.update(
+      {
+        title: req.body.title,
+        description: req.body.description,
+      },
+      {
+        where: { title: req.body.title, user_id: req.session.user_id },
+      }
+    );
 
     //rendering blogs on blog hb
     const blogs = blogData.get({ plain: true });
