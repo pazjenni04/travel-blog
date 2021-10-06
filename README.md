@@ -66,7 +66,7 @@ _Questions? Feel free to contact me._
 
 # Links
 
-Github link -
+Github link - https://github.com/pazjenni04/travel-blog.git
 
 Deployed link -
 
