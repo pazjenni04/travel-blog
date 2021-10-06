@@ -5,7 +5,7 @@ const newBlogPost = async (event) => {
   const blogTextArea = document.getElementById("post-text-area");
 
   if (blogTitle && blogTextArea) {
-    const response = await fetch("/api/blog", {
+    const response = await fetch("/api/blog/", {
       method: "POST",
       body: JSON.stringify({
         title: blogTitle,

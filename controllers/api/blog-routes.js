@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Blog = require("../../models/Blog");
 const sequelize = require("../../config/connection");
+const withAuth = require("../../utils/auth");
 
 //renders all posted blogs
 router.get("/", async (req, res) => {
@@ -21,19 +22,37 @@ router.get("/", async (req, res) => {
 });
 
 //creates a new blog post
-router.post("/", async (req, res) => {
-  console.log("WHAT ARE YOU DOING");
+// router.post("/", async (req, res) => {
+//   console.log("WHAT ARE YOU DOING");
+//   try {
+//     const blogData = await Blog.create(
+//       JSON.stringify({
+//         title: req.body.title,
+//         description: req.body.description,
+//       })
+//     );
+
+//     req.session.save(() => {
+//       req.session.user_id = blogData.id;
+//       req.session.logged_in = true;
+
+//       res.status(200).json(blogData);
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(400).json(err);
+//   }
+// });
+
+router.post("/", withAuth, async (req, res) => {
   try {
-    const blogData = await Blog.create({ ...req.body });
-
-    req.session.save(() => {
-      req.session.user_id = blogData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(blogData);
+    const newBlog = await Blog.create({
+      ...req.body,
+      user_id: req.session.user_id,
     });
+
+    res.status(200).json(newBlog);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });

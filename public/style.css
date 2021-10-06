@@ -33,12 +33,12 @@ h2 {
   margin-right: auto;
 }
 
-#loginBtn {
-  margin: 10px;
-  padding: 10px;
+.blog-text {
   font-size: 30px;
-  background-color: #d5f5e3;
-  border-radius: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  position: relative;
+  text-align: center;
 }
 
 #home-p {
@@ -50,4 +50,12 @@ h2 {
 #blog-title {
   font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
+}
+
+#journal-travel {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }

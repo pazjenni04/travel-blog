@@ -24,6 +24,13 @@
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only"></span></a>
       <a class="nav-item nav-link" href="/api/blog">Blogs</a>
       <a class="nav-item nav-link" href="/profile">Profile</a>
+      <nav>
+      {{#if loggedIn}}
+     <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <button id="loginBtn"><a href="/login">Login</a></button>
+      {{/if}}
+      </nav>
     </div>
   </div>
 </nav>
@@ -31,13 +38,7 @@
       {{{ body }}}
     </main>
   </div>
-   <nav>
-      {{#if loggedIn}}
-     <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-      <button id="loginBtn"><a href="/login">Login</a></button>
-      {{/if}}
-      </nav>
+   
 
   {{!-- if logged on, will display logout option --}}
   {{#if loggedIn}}
