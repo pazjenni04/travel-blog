@@ -22,8 +22,9 @@ router.get("/", async (req, res) => {
 
 //creates a new blog post
 router.post("/", async (req, res) => {
+  console.log("WHAT ARE YOU DOING");
   try {
-    const blogData = await Blog.create(...req.body);
+    const blogData = await Blog.create({ ...req.body });
 
     req.session.save(() => {
       req.session.user_id = blogData.id;

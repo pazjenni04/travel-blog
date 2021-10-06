@@ -16,7 +16,7 @@ let submitForm = form.submit.addEventListener("click", (event) => {
       headers: { "Content-Type": "application/json" },
     }).then(function (response) {
       if (response.ok) {
-        document.location.replace("/profile");
+        document.location.replace("/");
       } else {
         alert("Login failed. Try again.");
       }
@@ -44,7 +44,7 @@ const newAccount = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/");
     } else {
       alert("Failed to sign up");
     }

@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "watch": "nodemon server.js",
     "seeds": "node seeds/index.js"
   },
   "repository": {

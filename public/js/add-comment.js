@@ -27,5 +27,5 @@ const newComment = async (event) => {
 };
 
 document
-  .getElementById("post-submission")
-  .addEventListener("submit", newBlogPost);
+  .getElementById("comment-submission")
+  .addEventListener("submit", newComment);
