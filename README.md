@@ -68,7 +68,7 @@ _Questions? Feel free to contact me._
 
 Github link - https://github.com/pazjenni04/travel-blog.git
 
-Deployed link -
+Deployed link - https://git.heroku.com/simple-travel-blog.git
 
 # License
 
