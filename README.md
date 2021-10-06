@@ -43,7 +43,7 @@ Once the user signs up for an account, they will be redirected to the homepage w
 
 As the user navigates back to the blog page, they will be then presented with a simple blog form that they can fill out in order to submit a new post.
 
-[The following image shows the blog post form](https://raw.githubusercontent.com/pazjenni04/travel-blog/main/public/images/new-blog.PNG)
+![The following image shows the blog post form](https://raw.githubusercontent.com/pazjenni04/travel-blog/main/public/images/new-blog.PNG)
 
 Once the user posts the blog, they will then be alerted with a "Success" message at the top of the browser.
 
